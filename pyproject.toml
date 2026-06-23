@@ -24,6 +24,9 @@ dynamic = ["version"]
 [project.scripts]
 akebi = "akebi:main"
 
+[tool.hatch.version]
+source = "vcs"
+
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
