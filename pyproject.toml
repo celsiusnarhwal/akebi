@@ -21,8 +21,10 @@ dependencies = [
 ]
 dynamic = ["version"]
 
-[project.scripts]
-akebi = "akebi:main"
+[project.urls]
+Repository = "https://github.com/celsiusnarhwal/akebi"
+Issues = "https://github.com/celsiusnarhwal/akebi/issues"
+Changelog = "https://github.com/celsiusnarhwal/akebi/blob/main/CHANGELOG.md"
 
 [tool.hatch.version]
 source = "vcs"
