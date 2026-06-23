@@ -1,0 +1,39 @@
+name: Release
+
+on:
+    release:
+        types:
+            - published
+
+jobs:
+    build:
+        name: Build Package
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v7
+            
+            - name: Set Up uv
+              uses: astral-sh/setup-uv@v8.2.0
+            
+            - name: Build Package
+              run: uv build
+            
+            - name: Upload Artifact
+              uses: actions/upload-artifact@v7
+              with:
+                path: dist
+    
+    publish:
+        name: Publish to PyPI
+        permissions:
+            id-token: write
+        runs-on: ubuntu-latest
+        steps:
+            - name: Download Artifact
+              uses: actions/download-artifact@v8
+              with:
+                path: dist
+        
+            - name: Publish to PyPI
+              uses: pypa/gh-action-pypi-publish@release/v1

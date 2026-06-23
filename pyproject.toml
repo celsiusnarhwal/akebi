@@ -1,0 +1,29 @@
+[project]
+name = "akebi"
+description = "Manage Bun installations from Python"
+readme = "README.md"
+license-files = ["LICENSE.md"]
+authors = [
+    { name = "celsius narhwal", email = "hello@celsiusnarhwal.dev" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "httpx2>=2.4.0",
+    "kokomikke>=0.1.4",
+    "loguru>=0.7.3",
+    "platformdirs>=4.10.0",
+    "pydantic>=2.13.4",
+    "pydantic-extra-types>=2.11.1",
+    "pydantic-settings>=2.14.1",
+    "rich>=15.0.0",
+    "semver>=3.0.4",
+    "sqlitedict>=2.1.0",
+]
+dynamic = ["version"]
+
+[project.scripts]
+akebi = "akebi:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
