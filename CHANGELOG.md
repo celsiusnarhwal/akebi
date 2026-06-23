@@ -4,6 +4,12 @@ Notable changes to Akebi will be documented here.
 
 Akebi follows [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## <a name="0.1.2">0.1.2 — 2026-06-23</a>
+
+### Fixed
+
+- Fixed a bug where Akebi would not use the `.exe` extension for Bun executables on Windows.
+
 ## <a name="0.1.0">0.1.0 — 2026-06-23</a>
 
 This is the initial release of Akebi.
