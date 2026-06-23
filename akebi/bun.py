@@ -76,7 +76,12 @@ class Bun(BaseModel):
 
         This only returns where the executable *should* be; it does not guarantee that it exists.
         """
-        return utils.get_bun_dir(self.app_name) / str(self.version) / "bin" / "bun"
+        path = utils.get_bun_dir(self.app_name) / str(self.version) / "bin" / "bun"
+
+        if platform.system().lower() == "windows":
+            path = path.with_suffix(".exe")
+
+        return path
 
     @property
     def checksum(self) -> str | None:
@@ -163,7 +168,12 @@ class Bun(BaseModel):
 
                     ZipFile(bun_zip).extractall()
 
-                    bun_bin = next(Path.cwd().glob("**/bun"))
+                    glob = "**/bun"
+
+                    if target["host"] == "windows":
+                        glob += ".exe"
+
+                    bun_bin = next(Path.cwd().glob(glob))
                     bun_bin.chmod(bun_bin.stat().st_mode | stat.S_IEXEC)
 
                     self.bin_path.parent.mkdir(parents=True, exist_ok=True)
