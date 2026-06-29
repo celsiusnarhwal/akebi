@@ -73,7 +73,7 @@ Sleep 5s
 
 Hide
 
-Type "cd .."
+Type "cd ~"
 
 Type "rm -rf ${demo_dir}"
 Enter
