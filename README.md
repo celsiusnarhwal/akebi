@@ -4,6 +4,8 @@ Akebi allows Python programs to manage [Bun](https://bun.com) installations. It 
 to install or run Node.js packages but do not wish to depend on the end user having an appropriate runtime or package
 manager installed.
 
+![gif](vhs/gifs/demo.gif)
+
 ## Installation
 
 ```shell
