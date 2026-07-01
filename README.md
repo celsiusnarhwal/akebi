@@ -33,7 +33,7 @@ bun(["add", "next"])
 bun(["create", "docusaurus"])
 ```
 
-Akebi will automatically install Bun as necessary, but you can also install it manually with `Bun.setup`:
+Akebi will automatically install Bun when you invoke it, but you can also install it explicitly with `Bun.setup`:
 
 ```python
 bun.setup()
