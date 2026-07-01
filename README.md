@@ -28,11 +28,7 @@ You can then invoke Bun by calling the `Bun` object you just created. A `Bun` ob
 containing command-line arguments.
 
 ```python
-from akebi import Bun
-
-bun = Bun()
-
-bun(["run", "./my-script.ts"])
+bun(["run", "index.ts"])
 bun(["add", "next"])
 bun(["create", "docusaurus"])
 ```
